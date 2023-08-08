@@ -1,0 +1,35 @@
+:host {
+  padding: 8px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  .logo a {
+    padding-top: 5px;
+    display: inline-block;
+    img {
+      width: 40px;
+      height: auto;
+    }
+  }
+
+  .menu{
+    .menuList{
+        padding: 10px 20px;
+        line-height: 1;
+        cursor: pointer;
+
+        img{
+            width: 18px;
+            height: 18px;
+        }
+
+        &:nth-child(1){
+            padding-top: 20px;
+        }
+    }
+  }
+
+}

@@ -1,0 +1,14 @@
+<div class="d-flex flex-row flex-wrap align-items-start justify-content-center w-100-p">
+  <div class="w-100-p logo">
+    <a href="!#">
+      <img src="../../../assets/images/sidebar/logo.svg" alt="">
+    </a>
+  </div>
+  <div class="menu d-flex flex-column">
+      <ng-container *ngFor="let menuList of mainMenu">
+        <a class="menuList" href="!#">
+          <img src="../../../assets/images/sidebar/{{menuList.src}}.svg" alt="{{menuList.src}}"/>
+        </a>
+      </ng-container>
+  </div>
+</div>
