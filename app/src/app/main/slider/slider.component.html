@@ -1,0 +1,9 @@
+<div class="slider-container">
+  <button (click)="previousLine()" [disabled]="currentIndex === 0">
+    <img src="../../../assets/images/PG/left.svg" alt="left" />
+  </button>
+  <div class="line">{{ lines[currentIndex] }}</div>
+  <button (click)="nextLine()" [disabled]="currentIndex === lines.length - 1">
+    <img src="../../../assets/images/PG/right.svg" alt="right" />
+  </button>
+</div>

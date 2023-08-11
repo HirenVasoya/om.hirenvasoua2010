@@ -1,1 +1,131 @@
-<p>app-container works!</p>
+<div class="w-100-p h-100-p d-flex flex-row align-items-start justify-content-start">
+  <div class="calendarView w-70-p h-100-p d-flex flex-row flex-wrap align-items-start justify-content-start">
+    <div class="calenderScroll w-100-p d-flex flex-wrap align-self-start   align-items-start justify-content-start">
+
+      <div class="calendarFilter align-self-start w-100-p d-flex flex-wrap align-items-center justify-content-start">
+        <label class="dropdown">
+          <div class="dd-button">
+            Filters
+          </div>
+          <input type="checkbox" class="dd-input" id="test">
+          <ul class="dd-menu">
+            <li>Action</li>
+            <li>Another action</li>
+          </ul>
+        </label>
+        <label class="dropdown">
+          <div class="dd-button">
+            Group By: <strong>Location</strong>
+          </div>
+          <input type="checkbox" class="dd-input" id="test">
+          <ul class="dd-menu">
+            <li>Action</li>
+            <li>Another action</li>
+          </ul>
+        </label>
+        <app-slider></app-slider>
+        <label class="dropdown">
+          <div class="dd-button">
+            Week
+          </div>
+          <input type="checkbox" class="dd-input" id="test">
+          <ul class="dd-menu">
+            <li>Action</li>
+            <li>Another action</li>
+          </ul>
+        </label>
+        <span class="space"></span>
+        <div class="d-flex align-items-center justify-content-start">
+          <span>Show Map</span>
+          <label class="ml-8 toggle-switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="Calendar w-100-p">
+      </div>
+    </div>
+
+    <div class="border-top calendarFooter align-self-end w-100-p d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center justify-content-start">
+        <div class="w-200 d-flex align-items-center justify-content-between">
+          <span>Showing 5 out of 5</span>
+        </div>
+        <div class="footerBadge ml-12 d-flex align-items-center justify-content-between">
+          <div class="badge low text-uppercase d-flex align-items-center justify-content-between">
+            <img class="wh-12 mr-4" src="../../../assets/images/filter/low.svg" alt="low" />
+            <span>low</span>
+          </div>
+          <div class="badge medium text-uppercase ml-8 mr-8 d-flex align-items-center justify-content-between">
+            <img class="wh-12 mr-4" src="../../../assets/images/filter/medium.svg" alt="medium" />
+            <span>Medium</span>
+          </div>
+          <div class="badge high text-uppercase d-flex align-items-center justify-content-between">
+            <img class="wh-12 mr-4" src="../../../assets/images/filter/high.svg" alt="high" />
+            <span>high</span>
+          </div>
+        </div>
+      </div>
+      <app-pagination class="w-125"></app-pagination>
+    </div>
+  </div>
+  <!-- [ngClass]="{'':childMessage}" -->
+  <div  class="rightSideFilter h-100-p d-flex flex-row flex-wrap align-items-start justify-content-start">
+    <div class="p-12  w-100-p d-flex flex-row flex-wrap align-items-start justify-content-start">
+      <div class="w-100-p d-flex align-items-center justify-content-between">
+        <label class="dropdown">
+          <div class="dd-button">
+            Filter
+          </div>
+          <input type="checkbox" class="dd-input" id="test">
+          <ul class="dd-menu">
+            <li>Action</li>
+            <li>Another action</li>
+            <li>Something else here</li>
+            <li class="divider"></li>
+          </ul>
+        </label>
+        <div class="ml-12 Search d-flex align-items-center">
+          <img class="searchIcon" src="../../../assets/images/filter/search.svg"> <input type="search"
+            placeholder="serach">
+        </div>
+      </div>
+      <div class="filterResult mt-8 mb-8 w-100-p d-flex align-items-center justify-content-between">
+        <strong>10 Results</strong>
+        <span class="d-flex align-items-center">
+          <img class="wh-12" src="../../../assets/images/filter/sort.svg" alt="sort" />
+          <span class="ml-4 mr-4">Priority</span>
+          <img class="wh-12" src="../../../assets/images/filter/chevron.svg" alt="chevron" />
+        </span>
+      </div>
+      <div class="filterResultList w-100-p d-flex flex-wrap align-items-start justify-content-between">
+        <ng-container *ngFor="let locationList of location">
+          <div class="card w-100-p">
+            <div class="w-100-p d-flex flex-column align-items-start justify-content-start">
+              <div class="subTitle w-100-p">
+                <span>{{locationList.subTitle}}</span>
+              </div>
+              <div class=" Title w-100-p text-capitalize">
+                {{locationList.title}}
+              </div>
+              <div class="Address text-capitalize w-100-p d-flex flex-row align-items-center justify-content-start">
+                <span><img class="w-12 mr-8" src="../../../assets/images/filter/pin.svg" alt="pin" /></span>
+                <span>{{locationList.location}}</span>
+              </div>
+              <div class="Warranty mt-8 mb-8 d-flex flex-row align-items-center justify-content-start">
+                <span><img class="w-12 mr-8" src="../../../assets/images/filter/{{locationList.warrantyIcon}}.svg"
+                    alt="high" /></span>
+                <span class="badge text-uppercase">{{locationList.warranty}}</span>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="border-top align-self-end w-100-p d-flex align-items-center justify-content-end">
+      <app-pagination class="w-100-p"></app-pagination>
+    </div>
+  </div>
+</div>

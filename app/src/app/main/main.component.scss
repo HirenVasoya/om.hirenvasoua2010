@@ -11,13 +11,23 @@
     width: 60px;
     max-width: 60px;
     height: 100%;
-    // position: absolute;
-    // left: 0;
-    // top: 0;
-    box-shadow: 1px 1px 5px rgb(17 17 17 / 33%);
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 9;
   }
 
-  .header{
+  .mainContainer{
+    margin-left: 60px;
+    height: 100%;
     width: calc(100% - 60px);
+      .header{
+        height: 50px;
+        z-index: 9;
+      }
+      .Contant{
+        height: calc(100% - 50px);
+      }
+
   }
 }

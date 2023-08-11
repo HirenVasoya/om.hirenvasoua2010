@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+  isFlagEnabled:boolean = false;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+  }
+
+  sideBarToggle(flag:boolean){
+    this.isFlagEnabled = flag;
+    console.log(this.isFlagEnabled)
   }
 
 }

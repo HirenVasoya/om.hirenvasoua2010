@@ -1,0 +1,29 @@
+
+.Pagination{
+  padding: 12px 16px;
+  height: 50px;
+    ul{
+      margin: 0;
+      display: flex;
+      list-style: none;
+      li{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 6px;
+        background-color: #eeeeee;
+        font-size: 11px;
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
+        margin-left: 5px;
+        cursor: pointer;
+  
+        &:nth-of-type(2){
+          background-color: #1B2B58;
+          color: #ffffff;
+        }
+      }
+  
+    }
+  }
