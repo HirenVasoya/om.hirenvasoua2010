@@ -5,11 +5,11 @@
         </div>
         <div class="mainContainer d-flex flex-row flex-wrap align-items-start justify-content-start">
             <div class="header w-100-p">
-                <app-header (sideBarToggle)="sideBarToggle($event)"></app-header>
+                <app-header (sideBarToggle)="sideBarToggle($event)" ></app-header>
             </div>
             <div class="Contant w-100-p">
               
-                <app-app-container [flagValue]="isFlagEnabled"></app-app-container>
+                <app-app-container [SidebarFlag]="rightSidebarFlag"></app-app-container>
             </div>
         </div>
     </div>

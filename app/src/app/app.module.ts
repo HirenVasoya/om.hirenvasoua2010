@@ -5,6 +5,17 @@ import {MatInputModule} from '@angular/material/input';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatButtonModule} from '@angular/material/button';
 
+import { ToastAllModule } from '@syncfusion/ej2-angular-notifications';
+import { DropDownButtonAllModule } from '@syncfusion/ej2-angular-splitbuttons';
+import { TreeViewModule } from '@syncfusion/ej2-angular-navigations';
+import { DropDownListAllModule, MultiSelectAllModule } from '@syncfusion/ej2-angular-dropdowns';
+import { MaskedTextBoxModule, UploaderAllModule } from '@syncfusion/ej2-angular-inputs';
+import { ToolbarAllModule, ContextMenuAllModule, AppBarModule } from '@syncfusion/ej2-angular-navigations';
+import { ButtonAllModule, CheckBoxAllModule, SwitchAllModule } from '@syncfusion/ej2-angular-buttons';
+import { DatePickerAllModule, TimePickerAllModule, DateTimePickerAllModule } from '@syncfusion/ej2-angular-calendars';
+import { NumericTextBoxAllModule, TextBoxAllModule } from '@syncfusion/ej2-angular-inputs';
+import { ScheduleAllModule, RecurrenceEditorAllModule } from '@syncfusion/ej2-angular-schedule';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
@@ -13,6 +24,7 @@ import { SidebarComponent } from './main/sidebar/sidebar.component';
 import { HeaderComponent } from './main/header/header.component';
 import { PaginationComponent } from './main/pagination/pagination.component';
 import { SliderComponent } from './main/slider/slider.component';
+import { CalendarComponent } from './main/app-container/calendar/calendar.component';
 
 @NgModule({
   declarations: [	
@@ -22,7 +34,8 @@ import { SliderComponent } from './main/slider/slider.component';
     SidebarComponent,
     HeaderComponent,
     PaginationComponent,
-    SliderComponent
+    SliderComponent,
+    CalendarComponent,
    ],
   imports: [
     BrowserModule,
@@ -30,7 +43,8 @@ import { SliderComponent } from './main/slider/slider.component';
     MatInputModule,
     MatButtonModule,
     MatButtonToggleModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    ScheduleAllModule, RecurrenceEditorAllModule,   NumericTextBoxAllModule, TextBoxAllModule, DatePickerAllModule, TimePickerAllModule, DateTimePickerAllModule, CheckBoxAllModule,   ToolbarAllModule, DropDownListAllModule, ContextMenuAllModule, MaskedTextBoxModule, UploaderAllModule, MultiSelectAllModule,   TreeViewModule, ButtonAllModule, DropDownButtonAllModule, SwitchAllModule,ToastAllModule, AppBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

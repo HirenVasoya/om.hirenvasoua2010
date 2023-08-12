@@ -1,7 +1,6 @@
 <div class="w-100-p h-100-p d-flex flex-row align-items-start justify-content-start">
   <div class="calendarView w-70-p h-100-p d-flex flex-row flex-wrap align-items-start justify-content-start">
-    <div class="calenderScroll w-100-p d-flex flex-wrap align-self-start   align-items-start justify-content-start">
-
+    <div class="calenderScroll w-100-p d-flex flex-column flex-wrap align-items-start justify-content-start">
       <div class="calendarFilter align-self-start w-100-p d-flex flex-wrap align-items-center justify-content-start">
         <label class="dropdown">
           <div class="dd-button">
@@ -45,6 +44,7 @@
       </div>
 
       <div class="Calendar w-100-p">
+        <app-calendar></app-calendar>
       </div>
     </div>
 
@@ -71,8 +71,7 @@
       <app-pagination class="w-125"></app-pagination>
     </div>
   </div>
-  <!-- [ngClass]="{'':childMessage}" -->
-  <div  class="rightSideFilter h-100-p d-flex flex-row flex-wrap align-items-start justify-content-start">
+  <div [ngClass]="{'isOpen':SidebarFlag}" class="rightSideFilter h-100-p d-flex flex-row flex-wrap align-items-start justify-content-start">
     <div class="p-12  w-100-p d-flex flex-row flex-wrap align-items-start justify-content-start">
       <div class="w-100-p d-flex align-items-center justify-content-between">
         <label class="dropdown">

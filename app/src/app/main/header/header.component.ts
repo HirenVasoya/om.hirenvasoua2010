@@ -9,10 +9,10 @@ export class HeaderComponent implements OnInit {
 
   @Output() sideBarToggle = new EventEmitter<boolean>();
   status: boolean = false;
+  
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   rightSideFilter(){
     this.status = !this.status;     

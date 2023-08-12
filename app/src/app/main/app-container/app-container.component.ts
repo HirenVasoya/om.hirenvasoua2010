@@ -6,11 +6,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./app-container.component.scss']
 })
 export class AppContainerComponent {
-
-  @Input() flagValue: boolean = false;
+  @Input() SidebarFlag: boolean;
 
   constructor() {
-    console.log(this.flagValue)
    }
 
   ngOnInit() {
@@ -73,5 +71,6 @@ export class AppContainerComponent {
       warrantyIcon: 'medium',
     },
     
-]
+  ]
+  
 }

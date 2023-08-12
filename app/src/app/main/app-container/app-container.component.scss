@@ -8,6 +8,7 @@
   overflow: hidden;
 
   .calendarView {
+    position: relative;
     width: calc(100% - 270px);
 
     @include breakingpoint(md) {
@@ -36,6 +37,8 @@
     }
 
     .calendarFooter {
+      position: absolute;
+      bottom: 0;
       padding-left: 16px;
 
       @include breakingpoint(md) {
