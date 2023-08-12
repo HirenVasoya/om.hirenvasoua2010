@@ -1,6 +1,13 @@
 <div class="control-section">
+  
     <div class="w-100-p content-wrapper">
-      <ejs-schedule #scheduleObj width='100%' cssClass='timeline-resource-grouping' height='calc(100vh - 157px)'
+      <div class="calendarSearch">
+        <div class="ml-12 Search d-flex align-items-center">
+          <img class="searchIcon" src="../../../assets/images/filter/search.svg"> <input type="search"
+            placeholder="serach">
+        </div>
+      </div>
+      <ejs-schedule #scheduleObj width='100%' cssClass='timeline-resource-grouping' height='calc(100vh - 175px)'
         [selectedDate]="selectedDate" [group]="group" [workDays]="workDays" [eventSettings]="eventSettings">
         <e-resources>
           <e-resource field='ProjectId' title='Choose Project' [dataSource]='projectDataSource'
@@ -10,6 +17,17 @@
             name='Categories' textField='text' idField='id' groupIDField='groupId' colorField='color' cssClassField="cssClass">
           </e-resource>
         </e-resources>
+        <ng-template #resourceHeaderTemplate let-data>
+          <div class="template-wrap">
+            <div class="specialist-category">
+              <div class="firstChar" *ngIf="getConsultantStatus(data)" [ngStyle]="{'background-color':getConsultantStatus(data)}">
+                {{getConsultantName(data).charAt(0)}}
+              </div>
+              <div class="specialist-name">{{getConsultantName(data)}}</div>
+              <div class="specialist-designation">{{getConsultantDesignation(data)}}</div>
+            </div>
+          </div>
+        </ng-template>
         <e-views>
           <e-view option="TimelineDay"></e-view>
           <e-view option="TimelineWeek"></e-view>
