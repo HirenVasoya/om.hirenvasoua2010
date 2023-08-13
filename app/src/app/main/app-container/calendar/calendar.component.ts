@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { extend } from '@syncfusion/ej2-base';
 import {
-  TimelineViewsService, AgendaService, GroupModel, EventSettingsModel, ResizeService, DragAndDropService, ResourceDetails
+  TimelineViewsService, AgendaService, GroupModel, EventSettingsModel, ResizeService, DragAndDropService, ResourceDetails, View
 } from '@syncfusion/ej2-angular-schedule';
 
-import { resourceData, timelineResourceData } from 'src/app/shared/data';
+import { resourceData} from 'src/app/shared/data';
 
 @Component({
   selector: 'app-calendar',
@@ -13,10 +13,11 @@ import { resourceData, timelineResourceData } from 'src/app/shared/data';
   providers: [TimelineViewsService, AgendaService, ResizeService, DragAndDropService]
 })
 export class CalendarComponent {
+  public data: Record<string, any>[] = resourceData;
   public selectedDate: Date = new Date(2023, 0, 4);
   public workDays: number[] = [0, 1, 2, 3, 4, 5];
   public group: GroupModel = {
-    enableCompactView: false,
+    enableCompactView: true,
     resources: ['Projects', 'Categories']
   };
   public projectDataSource: Record<string, any>[] = [
@@ -33,11 +34,25 @@ export class CalendarComponent {
   ];
   public allowMultiple = true;
   public eventSettings: EventSettingsModel = {
-    dataSource: extend([], resourceData.concat(timelineResourceData), true) as Record<string, any>[]
+    dataSource: this.data,
+    fields: {
+      subject: { name: 'Title', validation: { required: true, regex: ['\;.*$']} },
+      location: {
+        name: 'Description', validation: {
+          required: true, minLength: 5, maxLength: 500
+        }
+      },
+     
+    }
   };
-  getResourceCssClass(resourceData: any): string {
-    return resourceData.cssClass || ''; // Return the CSS class from the data or an empty string
-  }
+  
+
+
+constructor(){
+  // let span_Text = document.querySelector(".e-subject").innerText;
+}
+  
+ 
 
   public getConsultantName(value: ResourceDetails): string {
     return (value as ResourceDetails).resourceData['text'] as string;
@@ -52,4 +67,6 @@ export class CalendarComponent {
   public getConsultantDesignation(value: ResourceDetails): string {
     return (value as ResourceDetails).resourceData['Designation'] as string;
   }
+
+ 
 }

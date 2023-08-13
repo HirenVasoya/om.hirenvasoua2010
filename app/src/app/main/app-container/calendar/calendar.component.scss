@@ -8,9 +8,34 @@
         display: none;
     }
 
-    .e-schedule .e-timeline-view .e-appointment{
-        border-radius: 8px;
+    .e-schedule {
+        .e-timeline-view {
+            .e-appointment{
+                border-radius: 8px;
+
+                .e-time{
+                    display: none;
+                }
+
+                .e-inner-wrap{
+                    justify-content: start;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+
+                    .e-subject{
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: unset;
+                        width: 56px;
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+       
     }
+       
 
     .e-parent-node{
         .firstChar{display: none;}
